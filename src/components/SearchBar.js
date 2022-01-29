@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={(e) => this.onFormSubmit(e)} action="">
+        <form onSubmit={this.onFormSubmit} action="">
           <div>
             <label htmlFor="search" className="form-label">
               Search Image
@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
                 value={this.state.term}
                 onChange={(e) => this.setState({ term: e.target.value })}
               />
-              <button className="btn btn-outline-primary">
+              <button onClick={this.onFormSubmit} className="btn btn-outline-primary">
                 <i className="bi bi-search"></i>
               </button>
             </div>
